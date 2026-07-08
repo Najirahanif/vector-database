@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+
+  qdrant:
+
+    # Official Qdrant Docker image
+    image: qdrant/qdrant:latest
+
+    # Friendly container name
+    container_name: qdrant
+
+    # Restart automatically unless manually stopped
+    restart: unless-stopped
+
+    ports:
+
+      # REST API
+      # Browser
+      # Postman
+      # Node.js SDK
+      - "6333:6333"
+
+      # gRPC API
+      # Faster protocol for supported clients
+      - "6334:6334"
+
+    volumes:
+
+      # Store all database files on the host machine.
+      # Prevents data loss when the container is recreated.
+      - ./storage:/qdrant/storage

@@ -1,0 +1,25 @@
+# Node dependencies
+**/node_modules/
+
+# Environment files
+**/.env
+
+# Python
+**/venv/
+**/__pycache__/
+
+# Hugging Face cache
+**/.cache/
+
+# Qdrant storage
+**/storage/
+
+# Temporary uploads
+**/temp/
+**/src/temp/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
