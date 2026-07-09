@@ -1,20 +1,17 @@
 const { v4: uuidv4 } = require("uuid");
-
 const qdrantClient = require("../config/qdrant");
 
-const COLLECTION_NAME = "image_embeddings";
-
 async function storeVector({
+    collectionName,
     embedding,
     fileName,
     fileType,
     s3Key,
     imageUrl,
 }) {
-
     const id = uuidv4();
 
-    await qdrantClient.upsert(COLLECTION_NAME, {
+    await qdrantClient.upsert(collectionName, {
         wait: true,
         points: [
             {
@@ -30,6 +27,8 @@ async function storeVector({
             },
         ],
     });
+
+    console.log(`✅ Stored in ${collectionName}`);
 
     return id;
 }
