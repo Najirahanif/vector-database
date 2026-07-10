@@ -1,0 +1,16 @@
+{
+  "name": "hybrid-search",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@qdrant/js-client-rest": "^1.18.0",
+    "dotenv": "^17.4.2"
+  }
+}
