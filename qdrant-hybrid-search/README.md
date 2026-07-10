@@ -406,6 +406,18 @@ With prefetch
 
 Uses Qdrant's internal RRF implementation.
 
+query: {
+   fusion: "rrf"           //*** use dbsf(Distribution-Based Score Fusion)***
+},
+
+*** DBSF (Distribution-Based Score Fusion) - Simple Explanation***
+
+DBSF is another method to combine multiple search results (like dense search + sparse search) into one final ranking.
+
+The difference:
+
+RRF looks at the rank position.
+DBSF looks at the actual search scores
 File:
 
 ```

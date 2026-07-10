@@ -33,7 +33,7 @@ export async function qdrantFusionSearch(query) {
                 }
             ],
             query: {
-                fusion: "rrf"
+                fusion: "rrf"//Distribution-Based Score Fusion
             },
             limit: 5,
             with_payload: true
