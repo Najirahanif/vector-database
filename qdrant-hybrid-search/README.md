@@ -418,8 +418,37 @@ The difference:
 
 RRF looks at the rank position.
 DBSF looks at the actual search scores
-File:
 
+Example
+
+Before normalization:
+
+Document	Dense	Sparse
+Apple iPhone	0.91	8.40
+MacBook	0.75	5.60
+
+After normalization (illustrative values):
+
+Document	Dense	Sparse
+Apple iPhone	0.95	0.90
+MacBook	0.80	0.70
+
+Final combined scores:
+
+Document	Final
+Apple iPhone	1.85
+MacBook	1.50
+
+Apple iPhone ranks first because it received strong scores from both searches.
+
+*** RRF vs DBSF ***
+RRF	                                       DBSF
+Uses rank	                                 Uses scores
+Formula: 1 / (k + rank)	                     Normalizes and combines scores
+Ignores original similarity scores	         Uses original similarity scores
+Simple and robust	                           Depends on score distributions
+
+File:
 ```
 fusionSearch.js
 ```
